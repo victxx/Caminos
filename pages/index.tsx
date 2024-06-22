@@ -42,10 +42,6 @@ export default function Home() {
         </div>
       </div>
       <div className="flex items-center mb-6">
-        <Avatar>
-          <AvatarImage src="/placeholder-user.jpg" />
-          <AvatarFallback>U</AvatarFallback>
-        </Avatar>
         <div className="ml-4">
           <h2 className="text-xl font-bold">Caminos</h2>
           <p className="text-sm text-gray-500">Collective Digital Stamps</p>
