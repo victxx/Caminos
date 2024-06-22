@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "components_Map_tsx";
+exports.ids = ["components_Map_tsx"];
+exports.modules = {
+
+/***/ "./components/Map.tsx":
+/*!****************************!*\
+  !*** ./components/Map.tsx ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dynamic */ \"./node_modules/next/dynamic.js\");\n/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nconst MapComponent = ()=>{\n    const mapRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);\n    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{\n        if (false) {}\n    }, []);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        ref: mapRef,\n        style: {\n            height: \"400px\",\n            width: \"100%\"\n        }\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\victo\\\\caminos\\\\components\\\\Map.tsx\",\n        lineNumber: 20,\n        columnNumber: 10\n    }, undefined);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (next_dynamic__WEBPACK_IMPORTED_MODULE_2___default()(()=>Promise.resolve(MapComponent), {\n    ssr: false\n}));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL01hcC50c3giLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBaUQ7QUFDZDtBQUVuQyxNQUFNSSxlQUFlO0lBQ25CLE1BQU1DLFNBQVNILDZDQUFNQSxDQUFpQjtJQUV0Q0QsZ0RBQVNBLENBQUM7UUFDUixJQUFJLEtBQWtCLEVBQWEsRUFTbEM7SUFDSCxHQUFHLEVBQUU7SUFFTCxxQkFBTyw4REFBQ2E7UUFBSUMsS0FBS1Y7UUFBUVcsT0FBTztZQUFFQyxRQUFRO1lBQVNDLE9BQU87UUFBTzs7Ozs7O0FBQ25FO0FBRUEsaUVBQWVmLG1EQUFPQSxDQUFDLElBQU1nQixRQUFRQyxPQUFPLENBQUNoQixlQUFlO0lBQUVpQixLQUFLO0FBQU0sRUFBRSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vY2FtaW5vcy8uL2NvbXBvbmVudHMvTWFwLnRzeD9lZWJmIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VFZmZlY3QsIHVzZVJlZiB9IGZyb20gJ3JlYWN0JztcclxuaW1wb3J0IGR5bmFtaWMgZnJvbSAnbmV4dC9keW5hbWljJztcclxuXHJcbmNvbnN0IE1hcENvbXBvbmVudCA9ICgpID0+IHtcclxuICBjb25zdCBtYXBSZWYgPSB1c2VSZWY8SFRNTERpdkVsZW1lbnQ+KG51bGwpO1xyXG5cclxuICB1c2VFZmZlY3QoKCkgPT4ge1xyXG4gICAgaWYgKHR5cGVvZiB3aW5kb3cgIT09ICd1bmRlZmluZWQnKSB7XHJcbiAgICAgIGltcG9ydCgnbGVhZmxldCcpLnRoZW4oKEwpID0+IHtcclxuICAgICAgICBpZiAobWFwUmVmLmN1cnJlbnQpIHtcclxuICAgICAgICAgIGNvbnN0IG1hcCA9IEwubWFwKG1hcFJlZi5jdXJyZW50KS5zZXRWaWV3KFs0Mi44ODA1LCAtOC41NDU2XSwgMTMpO1xyXG4gICAgICAgICAgTC50aWxlTGF5ZXIoJ2h0dHBzOi8ve3N9LnRpbGUub3BlbnN0cmVldG1hcC5vcmcve3p9L3t4fS97eX0ucG5nJywge1xyXG4gICAgICAgICAgICBhdHRyaWJ1dGlvbjogJyZjb3B5OyA8YSBocmVmPVwiaHR0cHM6Ly93d3cub3BlbnN0cmVldG1hcC5vcmcvY29weXJpZ2h0XCI+T3BlblN0cmVldE1hcDwvYT4gY29udHJpYnV0b3JzJ1xyXG4gICAgICAgICAgfSkuYWRkVG8obWFwKTtcclxuICAgICAgICB9XHJcbiAgICAgIH0pO1xyXG4gICAgfVxyXG4gIH0sIFtdKTtcclxuXHJcbiAgcmV0dXJuIDxkaXYgcmVmPXttYXBSZWZ9IHN0eWxlPXt7IGhlaWdodDogJzQwMHB4Jywgd2lkdGg6ICcxMDAlJyB9fSAvPjtcclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGR5bmFtaWMoKCkgPT4gUHJvbWlzZS5yZXNvbHZlKE1hcENvbXBvbmVudCksIHsgc3NyOiBmYWxzZSB9KTsiXSwibmFtZXMiOlsiUmVhY3QiLCJ1c2VFZmZlY3QiLCJ1c2VSZWYiLCJkeW5hbWljIiwiTWFwQ29tcG9uZW50IiwibWFwUmVmIiwidGhlbiIsIkwiLCJjdXJyZW50IiwibWFwIiwic2V0VmlldyIsInRpbGVMYXllciIsImF0dHJpYnV0aW9uIiwiYWRkVG8iLCJkaXYiLCJyZWYiLCJzdHlsZSIsImhlaWdodCIsIndpZHRoIiwiUHJvbWlzZSIsInJlc29sdmUiLCJzc3IiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/Map.tsx\n");
+
+/***/ })
+
+};
+;
