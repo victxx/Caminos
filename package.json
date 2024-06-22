@@ -13,10 +13,13 @@
     "next": "^14.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-qr-reader": "^3.0.0-beta-1",
     "web3": "^4.10.0"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/leaflet": "^1.9.12",
+    "@types/ms": "^0.7.34",
+    "@types/prop-types": "^15.7.12",
     "@types/react": "^18.0.24",
     "typescript": "^4.9.4"
   }
