@@ -17,8 +17,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#f5f5f5] p-6 rounded-lg max-w-4xl mx-auto">
-      <header className="flex justify-between items-center p-4 bg-white shadow mb-6">
+    <div className="bg-[#f5f5f5] min-h-screen flex flex-col items-center">
+      <header className="w-full flex justify-between items-center p-4 bg-white shadow mb-6">
         <div className="flex space-x-4">
           <Link href="#" prefetch={false}>
             <HomeIcon className="text-[#ff6347]" />
@@ -41,35 +41,40 @@ export default function Home() {
           </Link>
         </div>
       </header>
-      <div className="flex items-center mb-6">
-        <Avatar src="/placeholder-user.jpg" alt="User Avatar" fallback="U" />
-        <div className="ml-4">
-          <h2 className="text-xl font-bold text-center">Caminos</h2>
+      <main className="flex flex-col items-center w-full px-4">
+        <div className="flex flex-col items-center mb-6">
+          <h1 className="text-2xl font-bold text-center mb-2">Caminos</h1>
           <p className="text-sm text-gray-500 text-center">Collective Digital Stamps</p>
         </div>
-      </div>
-      <div className="mb-6">
-        <Map />
-      </div>
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <Link
-          href="#"
-          className="inline-flex items-center justify-center rounded-md bg-[#ff6347] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[#ff6347]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-          prefetch={false}
-        >
-          Scan
-        </Link>
-        <Link
-          href="#"
-          className="inline-flex items-center justify-center rounded-md bg-[#ff6347] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[#ff6347]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-          prefetch={false}
-        >
-          Digital Wallet
-        </Link>
-      </div>
-      <div className="mb-6">
-        <QRScanner />
-      </div>
+        <div className="flex items-center mb-6 w-full max-w-4xl">
+          <Avatar src="/placeholder-user.jpg" alt="User Avatar" fallback="U" />
+          <div className="ml-4">
+            <p className="text-center">username or wallet</p>
+          </div>
+        </div>
+        <div className="w-full max-w-4xl mb-6">
+          <Map />
+        </div>
+        <div className="grid grid-cols-2 gap-4 mb-6 w-full max-w-4xl">
+          <Link
+            href="#"
+            className="inline-flex items-center justify-center rounded-md bg-[#ff6347] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[#ff6347]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            prefetch={false}
+          >
+            Scan
+          </Link>
+          <Link
+            href="#"
+            className="inline-flex items-center justify-center rounded-md bg-[#ff6347] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[#ff6347]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            prefetch={false}
+          >
+            Digital Wallet
+          </Link>
+        </div>
+        <div className="w-full max-w-4xl mb-6">
+          <QRScanner />
+        </div>
+      </main>
     </div>
   );
 }
