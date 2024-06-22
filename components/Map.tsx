@@ -13,6 +13,18 @@ const MapComponent = () => {
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
+
+          // Geolocalización
+          map.locate({ setView: true, maxZoom: 16 });
+          map.on('locationfound', (e) => {
+            const radius = e.accuracy;
+            L.marker(e.latlng).addTo(map)
+              .bindPopup(`You are within ${radius} meters from this point`).openPopup();
+            L.circle(e.latlng, radius).addTo(map);
+          });
+          map.on('locationerror', (e) => {
+            alert(e.message);
+          });
         }
       });
     }

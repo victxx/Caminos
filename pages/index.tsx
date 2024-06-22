@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#f5f5f5] p-6 rounded-lg max-w-4xl mx-auto">
-      <div className="flex justify-between items-center mb-6">
+      <header className="flex justify-between items-center p-4 bg-white shadow mb-6">
         <div className="flex space-x-4">
           <Link href="#" prefetch={false}>
             <HomeIcon className="text-[#ff6347]" />
@@ -40,12 +40,12 @@ export default function Home() {
             <span className="sr-only">Profile</span>
           </Link>
         </div>
-      </div>
+      </header>
       <div className="flex items-center mb-6">
         <Avatar src="/placeholder-user.jpg" alt="User Avatar" fallback="U" />
         <div className="ml-4">
-          <h2 className="text-xl font-bold">Caminos</h2>
-          <p className="text-sm text-gray-500">Collective Digital Stamps</p>
+          <h2 className="text-xl font-bold text-center">Caminos</h2>
+          <p className="text-sm text-gray-500 text-center">Collective Digital Stamps</p>
         </div>
       </div>
       <div className="mb-6">
