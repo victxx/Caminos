@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import dynamic from 'next/dynamic';
-import Button from '@/components/Button';
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import Button from "@/components/ui/Button";
 
+// Importar QRScanner y Map de forma dinámica
 const QRScanner = dynamic(() => import('@/components/QRScanner'), { ssr: false });
-const Map = dynamic(() => import('@/components/Map'), { ssr: false });
+const MapComponent = dynamic(() => import('@/components/Map'), { ssr: false });
 
-export default function Component() {
+const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-primary text-primary-foreground py-4 px-6 flex justify-between items-center">
@@ -36,18 +37,21 @@ export default function Component() {
           </div>
         </div>
         <div className="bg-muted rounded-xl w-full max-w-3xl aspect-[4/3]">
-          <Map />
+          <div className="flex items-center justify-center h-full text-4xl font-bold text-muted-foreground">
+            <MapComponent />
+          </div>
         </div>
-        <Button variant="ghost" size="lg" className="rounded-full flex items-center justify-center">
-          <QRScanner />
+        <Button variant="ghost" size="lg" className="bg-muted-foreground rounded-full flex items-center justify-center">
+          <CameraIcon className="w-6 h-6 text-background" />
           <span className="sr-only">Scan an Image File</span>
+          <QRScanner />
         </Button>
       </div>
     </div>
   );
-}
+};
 
-function CameraIcon(props) {
+function CameraIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -67,7 +71,7 @@ function CameraIcon(props) {
   );
 }
 
-function HomeIcon(props) {
+function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -87,7 +91,7 @@ function HomeIcon(props) {
   );
 }
 
-function MailsIcon(props) {
+function MailsIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -108,7 +112,7 @@ function MailsIcon(props) {
   );
 }
 
-function SettingsIcon(props) {
+function SettingsIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -128,7 +132,7 @@ function SettingsIcon(props) {
   );
 }
 
-function UsersIcon(props) {
+function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -149,3 +153,5 @@ function UsersIcon(props) {
     </svg>
   );
 }
+
+export default Home;

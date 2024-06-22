@@ -7,7 +7,7 @@ const QRScanner: React.FC = () => {
   useEffect(() => {
     if (qrCodeRef.current) {
       const scanner = new Html5QrcodeScanner(
-        'qr-scanner',
+        qrCodeRef.current.id,
         { fps: 10, qrbox: 250 },
         false
       );
@@ -31,4 +31,5 @@ const QRScanner: React.FC = () => {
 };
 
 export default QRScanner;
+
 
