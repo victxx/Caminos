@@ -26,3 +26,4 @@ export const AvatarImage: React.FC<{ src: string; alt?: string }> = ({ src, alt 
 export const AvatarFallback: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <span className="text-lg font-bold">{children}</span>
 );
+

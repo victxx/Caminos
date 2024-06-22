@@ -1,10 +1,9 @@
-import type { AppProps } from 'next/app'
-import { Web3Provider } from '../contexts/Web3Context'
+// pages/_app.tsx
+import { AppProps } from 'next/app';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Web3Provider>
-      <Component {...pageProps} />
-    </Web3Provider>
-  )
+  return <Component {...pageProps} />;
 }
+
+export default MyApp;

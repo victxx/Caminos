@@ -22,3 +22,4 @@ const MapComponent = () => {
 };
 
 export default dynamic(() => Promise.resolve(MapComponent), { ssr: false });
+
