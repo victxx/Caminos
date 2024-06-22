@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import ConnectWallet from './components/ConnectWallet';
+import ConnectWallet from '../components/ConnectWallet';
 
 const QrReader = dynamic(() => import('react-qr-reader'), { ssr: false });
 
