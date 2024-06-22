@@ -1,81 +1,69 @@
 import Link from 'next/link';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import Button from '@/components/Button';
 
 const QRScanner = dynamic(() => import('@/components/QRScanner'), { ssr: false });
 const Map = dynamic(() => import('@/components/Map'), { ssr: false });
 
-export default function Home() {
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date().toLocaleTimeString());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
+export default function Component() {
   return (
-    <div className="bg-[#f5f5f5] min-h-screen flex flex-col items-center">
-      <header className="w-full flex justify-between items-center p-4 bg-white shadow mb-6">
-        <div className="flex space-x-4">
+    <div className="flex flex-col min-h-screen">
+      <header className="bg-primary text-primary-foreground py-4 px-6 flex justify-between items-center">
+        <div className="flex items-center gap-4">
           <Link href="#" prefetch={false}>
-            <HomeIcon className="text-[#ff6347]" />
-            <span className="sr-only">Home</span>
+            <HomeIcon className="w-6 h-6" />
           </Link>
           <Link href="#" prefetch={false}>
-            <MailsIcon className="text-[#ff6347]" />
-            <span className="sr-only">Notifications</span>
+            <MailsIcon className="w-6 h-6" />
           </Link>
         </div>
-        <div className="text-sm">IT: {time}</div>
-        <div className="flex space-x-4">
+        <h1 className="text-2xl font-bold">Caminos</h1>
+        <div className="flex items-center gap-4">
           <Link href="#" prefetch={false}>
-            <SettingsIcon className="text-[#ff6347]" />
-            <span className="sr-only">Settings</span>
+            <UsersIcon className="w-6 h-6" />
           </Link>
           <Link href="#" prefetch={false}>
-            <UsersIcon className="text-[#ff6347]" />
-            <span className="sr-only">Profile</span>
+            <SettingsIcon className="w-6 h-6" />
           </Link>
         </div>
       </header>
-      <main className="flex flex-col items-center w-full px-4">
-        <div className="flex flex-col items-center mb-6">
-          <h1 className="text-2xl font-bold text-center mb-2">Caminos</h1>
-          <p className="text-sm text-gray-500 text-center">Collective Digital Stamps</p>
-        </div>
-        <div className="flex items-center mb-6 w-full max-w-4xl">
-          <Avatar src="/placeholder-user.jpg" alt="User Avatar" fallback="U" />
-          <div className="ml-4">
-            <p className="text-center">username or wallet</p>
+      <div className="flex-1 flex flex-col items-center justify-center gap-8 px-4 py-12">
+        <div className="flex items-center gap-4">
+          <div>
+            <h2 className="text-2xl font-bold">Username</h2>
+            <p className="text-muted-foreground">0x1234567890abcdef</p>
           </div>
         </div>
-        <div className="w-full max-w-4xl mb-6">
+        <div className="bg-muted rounded-xl w-full max-w-3xl aspect-[4/3]">
           <Map />
         </div>
-        <div className="grid grid-cols-2 gap-4 mb-6 w-full max-w-4xl">
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-md bg-[#ff6347] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[#ff6347]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-            prefetch={false}
-          >
-            Scan
-          </Link>
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-md bg-[#ff6347] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[#ff6347]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-            prefetch={false}
-          >
-            Digital Wallet
-          </Link>
-        </div>
-        <div className="w-full max-w-4xl mb-6">
+        <Button variant="ghost" size="lg" className="rounded-full flex items-center justify-center">
           <QRScanner />
-        </div>
-      </main>
+          <span className="sr-only">Scan an Image File</span>
+        </Button>
+      </div>
     </div>
+  );
+}
+
+function CameraIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+      <circle cx="12" cy="13" r="3" />
+    </svg>
   );
 }
 
