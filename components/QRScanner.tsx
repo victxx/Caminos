@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import QrScanner from 'react-qr-scanner';
+import QrScanner from 'html5-qrcode';
 
 const QRScanner: React.FC = () => {
   const [result, setResult] = useState('No result');
