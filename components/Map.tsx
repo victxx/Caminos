@@ -1,3 +1,4 @@
+// components/Map.tsx
 import React, { useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 
