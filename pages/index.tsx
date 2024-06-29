@@ -1,53 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { BlueCreateWalletButton } from '../components/BlueCreateWalletButton';
-import { collectorClient, publicClient } from '../zoraSetup';
-import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
-import Button from '../components/ui/Button';
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/avatar";
+import Button from "../components/ui/Button";
+import { BlueCreateWalletButton } from "../components/BlueCreateWalletButton";
+import { useCallback } from "react";
+import { toast, Toaster } from "react-hot-toast";
 
 // Importar QRScanner y Map de forma dinámica
 const QRScanner = dynamic(() => import('../components/QRScanner'), { ssr: false });
 const MapComponent = dynamic(() => import('../components/Map'), { ssr: false });
 
 const Home: React.FC = () => {
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+  const handleWalletSuccess = useCallback((address: string) => {
+    toast.success(`Wallet connected: ${address}`);
+  }, []);
 
-  const handleWalletSuccess = (address: string) => {
-    setWalletAddress(address);
-  };
+  const handleWalletError = useCallback((error: any) => {
+    toast.error(`Error connecting wallet: ${error.message}`);
+  }, []);
 
-  const handleWalletError = (error: any) => {
-    console.error('Error connecting to wallet:', error);
-  };
-
-  const mintNFT = async () => {
-    const tokenContract = "0x1234567890123456789012345678901234567890"; // Actualiza esto con la dirección del contrato
-    const tokenId = BigInt(1);
-    const mintToAddress: `0x${string}` = walletAddress! as `0x${string}`;
-    const quantityToMint = 1;
-    const minterAccount: `0x${string}` = walletAddress! as `0x${string}`;
-
+  const mintNFT = useCallback(async () => {
     try {
-      const { parameters } = await collectorClient.mint({
-        mintType: "1155",
-        tokenContract,
-        tokenId,
-        mintRecipient: mintToAddress,
-        quantityToMint,
-        minterAccount,
-      });
-
-      const { request } = await publicClient.simulateContract(parameters);
-      // Aquí puedes enviar la transacción al blockchain usando `request`
-      console.log('Minting transaction prepared:', request);
+      // Lógica para mintear NFT
+      toast.success("NFT minted successfully!");
     } catch (error) {
-      console.error('Error minting NFT:', error);
     }
-  };
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Toaster />
       <header className="bg-primary text-primary-foreground py-4 px-6 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Link href="#" prefetch={false}>
@@ -71,7 +53,7 @@ const Home: React.FC = () => {
         <div className="flex items-center gap-4">
           <div>
             <h2 className="text-2xl font-bold">Username</h2>
-            <p className="text-muted-foreground">{walletAddress || '0x1234567890abcdef'}</p>
+            <p className="text-muted-foreground">0x1234567890abcdef</p>
           </div>
         </div>
         <div className="bg-muted rounded-xl w-full max-w-3xl aspect-[4/3]">
@@ -79,15 +61,14 @@ const Home: React.FC = () => {
             <MapComponent />
           </div>
         </div>
-        <BlueCreateWalletButton handleSuccess={handleWalletSuccess} handleError={handleWalletError} />
-        <Button variant="ghost" size="lg" className="bg-muted-foreground rounded-full flex items-center justify-center" onClick={mintNFT}>
+        <Button
+          variant="ghost"
+          size="lg"
+          className="bg-muted-foreground rounded-full flex items-center justify-center"
+        >
           Mint NFT
         </Button>
-        <Button variant="ghost" size="lg" className="bg-muted-foreground rounded-full flex items-center justify-center">
-          <CameraIcon className="w-6 h-6 text-background" />
-          <span className="sr-only">Scan an Image File</span>
-          <QRScanner />
-        </Button>
+        <BlueCreateWalletButton handleSuccess={handleWalletSuccess} handleError={handleWalletError} />
       </div>
     </div>
   );

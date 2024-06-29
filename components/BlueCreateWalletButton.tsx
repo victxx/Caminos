@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { getProvider } from '../setup';
+import { CoinbaseWalletSDK } from '@coinbase/wallet-sdk';
 
 const buttonStyles: React.CSSProperties = {
   background: 'transparent',
@@ -26,7 +26,12 @@ interface BlueCreateWalletButtonProps {
 export const BlueCreateWalletButton: React.FC<BlueCreateWalletButtonProps> = ({ handleSuccess, handleError }) => {
   const createWallet = useCallback(async () => {
     try {
-      const provider = getProvider();
+      const sdk = new CoinbaseWalletSDK({
+        appName: 'Caminos',
+        appChainIds: [8453],
+        appLogoUrl: 'https://example.com/logo.png', // Actualiza esto con tu logo
+      });
+      const provider = sdk.makeWeb3Provider();
       const [address] = await provider.request({
         method: 'eth_requestAccounts',
       });
