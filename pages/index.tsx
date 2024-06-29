@@ -1,12 +1,11 @@
-import Link from "next/link";
-import dynamic from "next/dynamic";
-import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/avatar";
-import Button from "../components/ui/Button";
-import { BlueCreateWalletButton } from "../components/BlueCreateWalletButton";
-import { useCallback } from "react";
-import { toast, Toaster } from "react-hot-toast";
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { useCallback } from 'react';
+import { toast, Toaster } from 'react-hot-toast';
+import { BlueCreateWalletButton } from '../components/BlueCreateWalletButton';
+import Button from '../components/ui/Button';
 
-// Importar QRScanner y Map de forma dinámica
+
 const QRScanner = dynamic(() => import('../components/QRScanner'), { ssr: false });
 const MapComponent = dynamic(() => import('../components/Map'), { ssr: false });
 
@@ -22,8 +21,9 @@ const Home: React.FC = () => {
   const mintNFT = useCallback(async () => {
     try {
       // Lógica para mintear NFT
-      toast.success("NFT minted successfully!");
+      toast.success('NFT minted successfully!');
     } catch (error) {
+      toast.error(`Error minting NFT: ${error.message}`);
     }
   }, []);
 
@@ -65,10 +65,14 @@ const Home: React.FC = () => {
           variant="ghost"
           size="lg"
           className="bg-muted-foreground rounded-full flex items-center justify-center"
+          onClick={mintNFT}
         >
           Mint NFT
         </Button>
         <BlueCreateWalletButton handleSuccess={handleWalletSuccess} handleError={handleWalletError} />
+        <div className="flex items-center justify-center mt-8">
+          <QRScanner />
+        </div>
       </div>
     </div>
   );
@@ -178,3 +182,4 @@ function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default Home;
+
