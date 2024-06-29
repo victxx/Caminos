@@ -5,14 +5,34 @@
       "static/chunks/node_modules_leaflet_dist_leaflet-src_js.js"
     ]
   },
-  "pages\\index.tsx -> @/components/Map": {
-    "id": "pages\\index.tsx -> @/components/Map",
+  "node_modules\\@zoralabs\\protocol-deployments\\dist\\chunk-KIPP2F4J.js -> ./ccip-IGMHQQR7.js": {
+    "id": "node_modules\\@zoralabs\\protocol-deployments\\dist\\chunk-KIPP2F4J.js -> ./ccip-IGMHQQR7.js",
+    "files": [
+      "static/chunks/node_modules_zoralabs_protocol-deployments_dist_ccip-IGMHQQR7_js.js"
+    ]
+  },
+  "node_modules\\viem\\_esm\\actions\\public\\call.js -> ../../utils/ccip.js": {
+    "id": "node_modules\\viem\\_esm\\actions\\public\\call.js -> ../../utils/ccip.js",
+    "files": []
+  },
+  "node_modules\\viem\\_esm\\utils\\rpc\\webSocket.js -> isows": {
+    "id": "node_modules\\viem\\_esm\\utils\\rpc\\webSocket.js -> isows",
+    "files": [
+      "static/chunks/node_modules_isows__esm_native_js.js"
+    ]
+  },
+  "node_modules\\viem\\_esm\\utils\\signature\\recoverPublicKey.js -> @noble/curves/secp256k1": {
+    "id": "node_modules\\viem\\_esm\\utils\\signature\\recoverPublicKey.js -> @noble/curves/secp256k1",
+    "files": []
+  },
+  "pages\\index.tsx -> ../components/Map": {
+    "id": "pages\\index.tsx -> ../components/Map",
     "files": [
       "static/chunks/components_Map_tsx.js"
     ]
   },
-  "pages\\index.tsx -> @/components/QRScanner": {
-    "id": "pages\\index.tsx -> @/components/QRScanner",
+  "pages\\index.tsx -> ../components/QRScanner": {
+    "id": "pages\\index.tsx -> ../components/QRScanner",
     "files": [
       "static/chunks/components_QRScanner_tsx.js"
     ]

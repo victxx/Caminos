@@ -7,20 +7,33 @@
     "start": "next start"
   },
   "dependencies": {
-    "@coinbase/wallet-sdk": "^3.6.3",
+    "@coinbase/onchainkit": "^0.22.2",
+    "@coinbase/wallet-sdk": "^3.9.3",
+    "@tanstack/react-query": "^5.49.0",
+    "@types/next": "^9.0.0",
+    "@zoralabs/protocol-sdk": "^0.7.1",
+    "@zoralabs/zdk": "^2.4.0",
     "html5-qrcode": "^2.3.8",
     "leaflet": "^1.9.4",
     "next": "^14.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "^6.24.0",
+    "react-router-dom": "^6.24.0",
+    "viem": "^2.16.4",
+    "wagmi": "^1.4.13",
     "web3": "^4.10.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.12",
+    "@types/istanbul-lib-coverage": "^2.0.6",
+    "@types/istanbul-lib-report": "^3.0.3",
+    "@types/istanbul-reports": "^3.0.4",
     "@types/leaflet": "^1.9.12",
     "@types/ms": "^0.7.34",
     "@types/prop-types": "^15.7.12",
     "@types/react": "^18.0.24",
-    "typescript": "^4.9.4"
+    "@types/stack-utils": "^2.0.3",
+    "typescript": "^5.5.2"
   }
 }
