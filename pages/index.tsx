@@ -1,15 +1,27 @@
-import Link from "next/link";
-import dynamic from "next/dynamic";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import Button from "@/components/ui/Button";
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { useCallback } from 'react';
+import { toast, Toaster } from 'react-hot-toast';
+import { BlueCreateWalletButton } from '../components/BlueCreateWalletButton';
+import Button from '../components/ui/Button';
 
-// Importar QRScanner y Map de forma dinámica
-const QRScanner = dynamic(() => import('@/components/QRScanner'), { ssr: false });
-const MapComponent = dynamic(() => import('@/components/Map'), { ssr: false });
+
+const QRScanner = dynamic(() => import('../components/QRScanner'), { ssr: false });
+const MapComponent = dynamic(() => import('../components/Map'), { ssr: false });
 
 const Home: React.FC = () => {
+  const handleWalletSuccess = useCallback((address: string) => {
+    toast.success(`Wallet connected: ${address}`);
+  }, []);
+
+  const handleWalletError = useCallback((error: any) => {
+    toast.error(`Error connecting wallet: ${error.message}`);
+  }, []);
+
+
   return (
     <div className="flex flex-col min-h-screen">
+      <Toaster />
       <header className="bg-primary text-primary-foreground py-4 px-6 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Link href="#" prefetch={false}>
@@ -41,11 +53,17 @@ const Home: React.FC = () => {
             <MapComponent />
           </div>
         </div>
-        <Button variant="ghost" size="lg" className="bg-muted-foreground rounded-full flex items-center justify-center">
-          <CameraIcon className="w-6 h-6 text-background" />
-          <span className="sr-only">Scan an Image File</span>
-          <QRScanner />
+        <Button
+          variant="ghost"
+          size="lg"
+          className="bg-muted-foreground rounded-full flex items-center justify-center"
+        >
+          Mint NFT
         </Button>
+        <BlueCreateWalletButton handleSuccess={handleWalletSuccess} handleError={handleWalletError} />
+        <div className="flex items-center justify-center mt-8">
+          <QRScanner />
+        </div>
       </div>
     </div>
   );
@@ -155,3 +173,4 @@ function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default Home;
+
