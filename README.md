@@ -28,26 +28,6 @@ By utilizing OnchainKit, Caminos ensures efficient and secure management of bloc
 - **QR Code Scanner**: For reading QR codes.
 - **Geolocation API**: For verifying user location.
 
-## Installation
-1. **Clone the repository**:
-    ```sh
-    git clone https://github.com/yourusername/caminos.git
-    cd caminos
-    ```
-
-2. **Install dependencies**:
-    ```sh
-    yarn install
-    ```
-
-3. **Run the development server**:
-    ```sh
-    yarn dev
-    ```
-
-## Deployment
-The project is deployed on Vercel. You can deploy your own version by connecting the repository to Vercel and following the deployment instructions.
-
 ## Challenges I Ran Into
 One of the significant challenges was integrating the QR code scanning and geolocation features with blockchain transactions in a user-friendly manner. Ensuring the security and authenticity of each digital stamp required careful handling of asynchronous operations and error management. Compatibility issues with different libraries and frameworks were also encountered and resolved through rigorous testing and detailed documentation.
 
