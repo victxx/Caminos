@@ -18,14 +18,6 @@ const Home: React.FC = () => {
     toast.error(`Error connecting wallet: ${error.message}`);
   }, []);
 
-  const mintNFT = useCallback(async () => {
-    try {
-      // Lógica para mintear NFT
-      toast.success('NFT minted successfully!');
-    } catch (error) {
-      toast.error(`Error minting NFT: ${error.message}`);
-    }
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -65,7 +57,6 @@ const Home: React.FC = () => {
           variant="ghost"
           size="lg"
           className="bg-muted-foreground rounded-full flex items-center justify-center"
-          onClick={mintNFT}
         >
           Mint NFT
         </Button>
