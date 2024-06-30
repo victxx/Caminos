@@ -9,6 +9,7 @@ const buttonStyles: React.CSSProperties = {
   alignItems: 'center',
   justifyContent: 'space-between',
   width: 200,
+  height: 50,
   fontFamily: 'Arial, sans-serif',
   fontWeight: 'bold',
   fontSize: 18,
@@ -29,7 +30,7 @@ export const BlueCreateWalletButton: React.FC<BlueCreateWalletButtonProps> = ({ 
       const sdk = new CoinbaseWalletSDK({
         appName: 'Caminos',
         appChainIds: [8453],
-        appLogoUrl: 'https://example.com/logo.png', // Actualiza esto con tu logo
+        appLogoUrl: 'https://ibb.co/kDP7kGh', // Actualiza esto con tu logo
       });
       const provider = sdk.makeWeb3Provider();
       const [address] = await provider.request({
@@ -55,7 +56,7 @@ function CoinbaseWalletLogo(props: React.SVGProps<SVGSVGElement>) {
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
-      fill="currentColor"
+      fill="#FFFFFF"
       width="24"
       height="24"
     >

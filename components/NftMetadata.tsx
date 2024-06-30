@@ -11,7 +11,7 @@ const NftMetadata: FC<NftMetadataProps> = ({ contractAddress, tokenId }) => {
 
   useEffect(() => {
     const fetchMetadata = async () => {
-      // Aquí va tu lógica para obtener metadata usando la API de Zora
+      
     };
 
     fetchMetadata();
@@ -21,7 +21,7 @@ const NftMetadata: FC<NftMetadataProps> = ({ contractAddress, tokenId }) => {
 
   return (
     <div>
-      {/* Renderiza los datos de metadata aquí */}
+      {}
     </div>
   );
 };

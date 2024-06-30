@@ -27,7 +27,7 @@ const QRScanner: React.FC = () => {
     }
   }, []);
 
-  return <div id="qr-scanner" ref={qrCodeRef} style={{ width: '300px', height: '300px' }} />;
+  return <div id="qr-scanner" ref={qrCodeRef} style={{ width: '150px', height: '150px' }} />;
 };
 
 export default QRScanner;

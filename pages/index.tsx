@@ -1,23 +1,32 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 import { BlueCreateWalletButton } from '../components/BlueCreateWalletButton';
-import Button from '../components/ui/Button';
-
+import Button from '../components/ui/Button'; 
 
 const QRScanner = dynamic(() => import('../components/QRScanner'), { ssr: false });
 const MapComponent = dynamic(() => import('../components/Map'), { ssr: false });
 
 const Home: React.FC = () => {
+  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+
   const handleWalletSuccess = useCallback((address: string) => {
     toast.success(`Wallet connected: ${address}`);
+    setWalletAddress(address);
   }, []);
 
   const handleWalletError = useCallback((error: any) => {
     toast.error(`Error connecting wallet: ${error.message}`);
   }, []);
 
+  const mintNFT = useCallback(async () => {
+    try {
+      toast.success('NFT minted successfully!');
+    } catch (error: any) {
+      toast.error(`Error minting NFT: ${error.message}`);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -30,9 +39,6 @@ const Home: React.FC = () => {
           <Link href="#" prefetch={false}>
             <MailsIcon className="w-6 h-6" />
           </Link>
-        </div>
-        <h1 className="text-2xl font-bold">Caminos</h1>
-        <div className="flex items-center gap-4">
           <Link href="#" prefetch={false}>
             <UsersIcon className="w-6 h-6" />
           </Link>
@@ -40,12 +46,13 @@ const Home: React.FC = () => {
             <SettingsIcon className="w-6 h-6" />
           </Link>
         </div>
+        <h1 className="text-2xl font-bold mx-auto">Caminos</h1>
       </header>
       <div className="flex-1 flex flex-col items-center justify-center gap-8 px-4 py-12">
         <div className="flex items-center gap-4">
           <div>
-            <h2 className="text-2xl font-bold">Username</h2>
-            <p className="text-muted-foreground">0x1234567890abcdef</p>
+            <h2 className="text-2xl font-bold">Wallet</h2>
+            <p className="text-muted-foreground">{walletAddress || 'No wallet connected'}</p>
           </div>
         </div>
         <div className="bg-muted rounded-xl w-full max-w-3xl aspect-[4/3]">
@@ -74,8 +81,8 @@ function CameraIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="50"
+      height="50"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -94,8 +101,8 @@ function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="50"
+      height="50"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -114,8 +121,8 @@ function MailsIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="50"
+      height="50"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -135,8 +142,8 @@ function SettingsIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="50"
+      height="50"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -155,8 +162,8 @@ function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="50"
+      height="50"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -173,4 +180,3 @@ function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default Home;
-
